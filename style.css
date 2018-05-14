@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:400,700');
+
+body{
+    background:#fff;
+    margin: 0;
+    padding: 0;
+    font-family: 'Josefin Sans', sans-serif;
+    background-attachment: fixed;
+}
+section{
+	position:absolute;
+	width:100%;
+	height:100vh;
+	background:#403f3f;
+	overflow:hidden;
+	animation: bgColor 20s linear infinite;
+}
+.bgPulse{
+	width:100%;
+	height:100%;
+}
+.bgPulse span{
+	position:absolute;
+	height:80px;
+	width:80px;
+	background:#fff;
+}
+.bgPulse span:nth-child(3n+1){
+	background:transparent;
+	border: 5px solid #fff;
+}
+.bgPulse span:nth-child(1){
+	top:50%;
+	left:20%;
+	animation: animate 10s linear infinite;
+}
+.bgPulse span:nth-child(2){
+	top:80%;
+	left:40%;
+	animation: animate 12s linear infinite;
+}
+.bgPulse span:nth-child(3){
+	top:10%;
+	left:65%;
+	animation: animate 15s linear infinite;
+}
+.bgPulse span:nth-child(4){
+	top:50%;
+	left:70%;
+	animation: animate 6s linear infinite;
+}
+.bgPulse span:nth-child(5){
+	top:10%;
+	left:30%;
+	animation: animate 8s linear infinite;
+}
+.bgPulse span:nth-child(6){
+	top:90%;
+	left:90%;
+	animation: animate 12s linear infinite;
+}
+.bgPulse span:nth-child(7){
+	top:80%;
+	left:5%;
+	animation: animate 5s linear infinite;
+}
+.bgPulse span:nth-child(8){
+	top:35%;
+	left:50%;
+	animation: animate 13s linear infinite;
+}
+.bgPulse span:nth-child(9){
+	top:5%;
+	left:5%;
+	animation: animate 7s linear infinite;
+}
+.bgPulse span:nth-child(10){
+	top:25%;
+	left:90%;
+	animation: animate 10s linear infinite;
+}
+header{
+	position:absolute;
+	top:0;
+	left:0;
+	background:#262626;
+	font-family: sans-serif;
+	padding: 0 100px;
+	width:100%;
+	box-sizing: border-box;
+
+}
+
+header .logo{
+	color:#fff;
+	height:50px;
+	line-height: 50px;
+	font-size:24px;
+	float:left;
+	font-weight:bold;
+}
+header nav{
+	float:right;
+}
+header nav ul{
+	display:flex;
+	margin:0;
+	padding:0;
+	
+}
+header nav ul li{
+	list-style:none;
+}
+header nav ul li a{
+	height:50px;
+	line-height:50px;
+	padding: 0 20px;
+	color:#fff;
+	text-decoration: none;
+	display:block;
+	transition:0.3s;
+}
+header nav ul li a:hover,
+header nav ul li a.active{
+	color:#fff;
+	background:#2196f3;
+}
+
+.menu-toggle{
+	color:#fff;
+	float:right;
+	line-height:50px;
+	font-size:24px;
+	cursor: pointer;
+	display:none;
+}
+@media(max-width: 991px){
+	header{
+		padding:0 20px;
+	}
+	.menu-toggle{
+		display:block;
+	}
+	header nav{
+		position:absolute;
+		width:100%;
+		height:calc(100vh-50px);
+		background: #333;
+		top:50px;
+		left:-100%;
+		transition:0.5s;
+	}
+	header nav ul{
+		display:block;
+		text-align:center;
+
+	}
+	header nav.active{
+		left:0;
+	}
+	header nav ul li a{
+		border-bottom: 1px solid rgba(0,0,0,.2);
+	}
+}
+.card{
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform: translate(-50%,-50%);
+	transform-style: preserve-3d;
+	width:300px;
+	height:300px;
+	perspective: 600px;
+	transition:0.5s;
+}
+.card .front{
+	position:absolute;
+	top: 0;
+	left:0;
+	width: 100%;
+	height:100%;
+	background:#000;
+	backface-visibility:hidden;
+	transform:rotateY(0deg);
+	transition:0.5s;
+}
+.card:hover .front{
+	transform: rotateY(-180deg);
+}
+.card .back:before{
+	content: '';
+	position:absolute;
+	top:0;
+	left:0%;
+	width:50%;
+	height:100%;
+	background: rgba(255,255,255,0.1);
+}
+.card .back{
+	position:absolute;
+	top: 0;
+	left:0;
+	width: 100%;
+	height:100%;
+	background:#000;
+	backface-visibility:hidden;
+	transform:rotateY(180deg);
+	transition:0.5s;
+}
+
+.card:hover .back{
+	transform: rotateY(0deg);
+}
+
+.card .back .details{
+	position:absolute;
+	top:50%;
+	left:0;
+	width:100%;
+	transform: translateY(-50%);
+	text-align: center;
+	padding:20px;
+	box-sizing: border-box;
+}
+.card .back .details h2{
+	margin:0px;
+	padding:0px;
+	font-size: 24px;
+	color:#fff;
+}
+
+.card .back .details h2 span{
+	color:#a7a7a7;
+	font-size: 16px;
+}
+.social-icons{
+	padding:10px 0;
+
+}
+.social-icons a{
+	display:inline-block;
+	width:36px;
+	height:36px;
+	text-align:center;
+	background:#262626;
+	color:#fff;
+	text-decoration:none;
+	border-radius:50%;
+	transition: 0.5s;
+}
+.social-icons a .fa{
+	line-height:36px;
+}
+.social-icons a:hover {
+	background:#e91e63;
+}
+@keyframes animate{
+	0%{
+		transform: scale(0) translateY(0) rotate(0deg);
+		opacity:1;
+	}
+	100%{
+		transform:scale(1) translateY(-100px) rotate(360deg);
+		opacity:0;
+	}
+}
+@keyframes bgColor{
+	0%{
+		background:#F44336;
+	}
+	25%{
+		background:#03A9F4;
+	}
+	50%{
+		background:#9C27B0;
+	}
+	75%{
+		background:#00FF0A;
+	}
+	100%{
+		background:#F44336;
+	}
+}
