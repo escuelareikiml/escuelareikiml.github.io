@@ -13,6 +13,7 @@ nav{
 	background:linear-gradient(to bottom,#b8ddff,#d9edff);
 	padding: 0 25px;
 	box-sizing:border-box;
+	z-index:2;
 }
 nav h1{
 	margin:0;
@@ -118,7 +119,7 @@ section.sec1{
 	background:url("reiki.jpg");
 	width:100%;
 	height:80vh;
-	background-size:cover;
+	background-size:100%;
 }
 section.sec2{
 	padding: 40px;
@@ -128,4 +129,124 @@ section.sec2{
 }
 section.sec2 p{
 	color:#2d2d2d;
+}
+section.sec3{
+	margin: 0 20%;
+    align-self: center;
+    padding: 40px;
+    justify-self: center;
+    text-align: center;
+    font-family: "Arial";
+    color: #223c52;
+    font-size: 24px;
+    box-sizing: border-box;
+    border-top: 2px solid #9bc7ec;
+}
+.container{
+	position:absolute;
+	padding:0;
+	margin:0;
+	width:100%;
+	display:flex;
+
+}
+section.sec4{
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translateX(-50%);
+	width:1000px;
+	height:500px;
+	display:flex;
+}
+section.sec4 .box{
+	position:relative;
+	width: 250px;
+	height:500px;
+	background:#ccc;
+	transition:.5s;
+}
+section.sec4 .box:nth-child(odd) .thumb{
+	bottom:0;
+	left:0;
+}
+section.sec4 .box:nth-child(even) .details{
+	bottom:0;
+	left:0;
+}
+
+section.sec4 .box:nth-child(1) .details{
+	background:#e22ca6;
+}
+section.sec4 .box:nth-child(2) .details{
+	background:#4495e1;
+}
+section.sec4 .box:nth-child(3) .details{
+	background:#019e3c;
+}
+section.sec4 .box:nth-child(4) .details{
+	background:#843202;
+}
+section.sec4 .box .thumb{
+	position:absolute;
+	width:100%;
+	height:250px;
+	overflow: hidden;
+	
+}
+section.sec4 .box .thumb img{
+	width:100%;
+}
+section.sec4 .box .details{
+	position:absolute;
+	width:100%;
+	height:250px;
+	overflow:hidden;
+	background:#262626;
+}
+section.sec4 .box:hover{
+	transform:scale(1.1);
+	z-index:1;
+	box-shadow: 0 5px 20px rgba(0,0,0,1);
+	display:flex;
+}
+
+section.sec4 .box .details .content{
+	position:absolute;
+	top:50%;
+	transform: translateY(-50%);
+	width: 100%;
+	padding:20px;
+	box-sizing: border-box;
+	text-align: center;
+	transition:0.5s;
+}
+
+section.sec4 .box .details .content h3{
+	margin:0;
+	padding: 10px 0;
+	color:#fff;
+}
+section.sec4 .box .details .content a{
+	display:inline-block;
+	padding: 5px 20px;
+	color:#fff;
+	border: 2px solid #fff;
+	text-decoration:none;
+	border-radius:20px;
+	transition:0.5s;
+}
+section.sec4 .box .details .content a:hover{
+	background:#fff;
+	color:#262626;
+}
+section.sec5{
+	position:relative;
+	margin-top:20px;
+	height: 40px;
+	padding: 10px;
+	top:500px;
+	width:100%;
+	text-align: center;
+	float:bottom;
 }
